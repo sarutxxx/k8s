@@ -5,23 +5,23 @@ metadata:
   namespace: dwh-prd-consent
   labels:
     app: orcl_ords
-    version: "1.2"
+    version: "1.3"
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: orcl_ords
-      version: "1.2"
+      version: "1.3"
   template:
     metadata:
       name: 
       labels:
         app: orcl_ords
-        version: "1.2"
+        version: "1.3"
     spec:
       containers:
           - name: orcl-ords-con
-            image: sarutsr/orcl_ords:v1.2
+            image: sarutsr/orcl_ords:v1.3
             imagePullPolicy: IfNotPresent
             resources:
                 requests:
@@ -44,11 +44,11 @@ metadata:
   namespace: dwh-prd-consent
   labels:
     app: orcl_ords
-    version: "1.2"
+    version: "1.3"
 spec:
   selector:
     app: orcl_ords
-    version: "1.2"
+    version: "1.3"
   type: NodePort
   ports:
   - name: ords
