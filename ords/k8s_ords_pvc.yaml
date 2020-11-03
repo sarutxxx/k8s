@@ -1,5 +1,5 @@
 ---
-### TOMCAT-PVC
+### Tomcat NFS
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
