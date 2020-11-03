@@ -24,9 +24,9 @@ spec:
          - name: dshm
            emptyDir:
              medium: Memory  
-         - name: ora-tomcat-data
+         - name: ora-tomcat
            persistentVolumeClaim:
-             claimName: ora-tomcat-data
+             claimName: ora-tomcat
       containers:
       - name: orcl-ords-con
         image: sarutsr/orcl_ords:v1.1
@@ -45,7 +45,7 @@ spec:
         volumeMounts:
             - name: dshm
               mountPath: "/dev/shm"
-            - name: ora-tomcat-data
+            - name: ora-tomcat
               mountPath: "/u01/pvc"
  ---
 apiVersion: v1
