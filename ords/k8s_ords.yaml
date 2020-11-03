@@ -14,6 +14,7 @@ spec:
       version: "1.1"
   template:
     metadata:
+      name: 
       labels:
         app: orcl_ords
         version: "1.1"
@@ -28,25 +29,26 @@ spec:
            persistentVolumeClaim:
              claimName: ora-tomcat
       containers:
-      - name: orcl-ords-con
-        image: sarutsr/orcl_ords:v1.1
-        resources:
-            requests:
-              memory: "4Gi"
-              cpu: "2"
-            limits:
-              memory: "8Gi"
-              cpu: "4"
-        ports:
-            - name: ords
-              containerPort: 8080
-            - name: https
-              containerPort: 8443
-        volumeMounts:
-            - name: dshm
-              mountPath: "/dev/shm"
-            - name: ora-tomcat
-              mountPath: "/u01/pvc"
+          - name: orcl-ords-con
+            image: sarutsr/orcl_ords:v1.1
+            imagePullPolicy: IfNotPresent
+            resources:
+                requests:
+                  memory: "4Gi"
+                  cpu: "2"
+                limits:
+                  memory: "8Gi"
+                  cpu: "4"
+            ports:
+                - name: ords
+                  containerPort: 8080
+                - name: https
+                  containerPort: 8443
+            volumeMounts:
+                - name: dshm
+                  mountPath: "/dev/shm"
+                - name: ora-tomcat
+                  mountPath: "/u01/pvc"
  ---
 apiVersion: v1
 kind: Service
