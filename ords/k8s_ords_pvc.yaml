@@ -7,7 +7,6 @@ metadata:
   namespace: dwh-prd-consent
   labels:
     app: orcl_ords
-    version: 1.1
 spec:
   storageClassName: acs-abs
   accessModes:
