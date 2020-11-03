@@ -48,7 +48,7 @@ spec:
                 - name: dshm
                   mountPath: "/dev/shm"
                 - name: ora-tomcat
-                  mountPath: "/u01/pvc"
+                  mountPath: "/u01"
                   
 
 ---
