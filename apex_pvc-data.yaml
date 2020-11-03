@@ -1,0 +1,17 @@
+---
+### Oracle 19c NFS
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: ora-data193
+  namespace: dwh-prd-consent
+  labels:
+    app: database_ords
+    version: 19.3.0.1
+spec:
+  storageClassName: acs-abs
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+     storage: 20Gi

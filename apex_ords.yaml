@@ -1,0 +1,90 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: apex-ords 
+  namespace: dwh-prd-consent
+  labels:
+    app: database_ords
+    version: "1.1"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: database_ords
+      version: "1.1"
+  template:
+    metadata:
+      name: 
+      labels:
+        app: database_ords
+        version: "1.1"
+    spec:
+      securityContext:
+        fsGroup: 54321
+      volumes:
+         - name: dshm
+           emptyDir:
+             medium: Memory  
+         - name: ora-data193
+           persistentVolumeClaim:
+             claimName: ora-data193
+      containers:
+        - name: apex-ords-con
+          image: sarutsr/apex_ords:v1.1
+          imagePullPolicy: IfNotPresent
+          resources:
+            requests:
+              memory: 8Gi
+            limits:
+              memory: 10Gi
+          ports:
+            - name: ssh
+              containerPort: 2222              
+            - name: ords
+              containerPort: 8080
+            - name: ordshttps
+              containerPort: 8443
+            - name: listener
+              containerPort: 1521
+          volumeMounts:
+            - name: dshm
+              mountPath: "/dev/shm"
+            - name: ora-data193
+              mountPath: "/u01/app/oracle/oradata"
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: apex-ords
+  namespace: dwh-prd-consent
+  labels:
+    app: database_ords
+    version: "1.1"
+spec:
+  selector:
+    app: database_ords
+    version: "1.1"
+  type: NodePort
+  ports:
+  - name: ssh
+    protocol: TCP
+    port: 2222
+    targetPort: 2222
+    nodePort: 32551
+  - name: ords
+    protocol: TCP
+    port: 8080
+    targetPort: 8080
+    nodePort: 32552
+  - name: listener
+    protocol: TCP
+    port: 1521
+    targetPort: 1521
+    nodePort: 32553
+  - name: ordshttps
+    protocol: TCP
+    port: 8443
+    targetPort: 8443
+    nodePort: 32554
+
