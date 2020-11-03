@@ -49,7 +49,9 @@ spec:
                   mountPath: "/dev/shm"
                 - name: ora-tomcat
                   mountPath: "/u01/pvc"
- ---
+                  
+
+---
 apiVersion: v1
 kind: Service
 metadata:
