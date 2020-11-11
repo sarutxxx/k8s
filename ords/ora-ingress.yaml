@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  namespace: dwh-prd-consent
+  name: ora-ingress
+  annotations:
+    kubernetes.io/ingress.allow-http: "false"
+spec:
+  rules:
+    - host: ords-dev.info
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: apex-ords
+              servicePort: 32554
