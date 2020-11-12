@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  namespace: dwh-prd-consent
+  name: ords-apex
+  labels:
+    app: database_ords
+  annotations:
+    kubernetes.io/ingress.allow-http: "false"
+spec:
+  rules:
+  - host: ords.dwh-prd-consent.arctic.true.th
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: ords-apex
+          servicePort: 80
