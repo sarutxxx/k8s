@@ -30,7 +30,7 @@ spec:
              claimName: ora-tomcat
       containers:
           - name: orcl-ords-con
-            image: reghbpr01.dc1.true.th/dwh-consent/ords_prd:v1.3
+            image: sarutsr/orcl_ords:v1.3
             imagePullPolicy: IfNotPresent
             resources:
                 requests:
