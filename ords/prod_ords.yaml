@@ -49,6 +49,8 @@ spec:
                   mountPath: "/dev/shm"
                 - name: ora-tomcat
                   mountPath: "/u01/config/instance1"
+                - name: ora-ords
+                  mountPath: "/u01/ords/conf"
                   
 
 ---
