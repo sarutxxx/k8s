@@ -15,10 +15,10 @@ spec:
   - name: ords
     protocol: TCP
     port: 8080
-    targetPort: 80
+    targetPort: 8080
     nodePort: 32558
   - name: ordshttps
     protocol: TCP
     port: 8443
-    targetPort: 443
+    targetPort: 8443
     nodePort: 32559
