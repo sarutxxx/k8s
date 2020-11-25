@@ -5,19 +5,19 @@ metadata:
   namespace: dwh-prd-consent
   labels:
     app: prod_ords
-    version: "1.4"
+    version: "1.5"
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: prod_ords
-      version: "1.4"
+      version: "1.5"
   template:
     metadata:
       name: 
       labels:
         app: prod_ords
-        version: "1.4"
+        version: "1.5"
     spec:
       securityContext:
         fsGroup: 54321
@@ -34,7 +34,7 @@ spec:
              
       containers:
           - name: prod-ords-con
-            image: reghbpr01.dc1.true.th/dwh-consent/prod_ords:v1.4
+            image: reghbpr01.dc1.true.th/dwh-consent/prod_ords:v1.5
             imagePullPolicy: IfNotPresent
             resources:
                 requests:
@@ -65,11 +65,11 @@ metadata:
   namespace: dwh-prd-consent
   labels:
     app: prod_ords
-    version: "1.4"
+    version: "1.5"
 spec:
   selector:
     app: prod_ords
-    version: "1.4"
+    version: "1.5"
   type: NodePort
   ports:
   - name: ords
