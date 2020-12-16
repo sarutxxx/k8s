@@ -1,0 +1,36 @@
+---
+### Tomcat NFS
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: dev-ora-tomcat
+  namespace: dwh-prd-consent
+  labels:
+    app: dev_ords
+spec:
+  storageClassName: acs-abs
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+     storage: 20Gi
+     
+     
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: dev-ora-ords
+  namespace: dwh-prd-consent
+  labels:
+    app: dev_ords
+spec:
+  storageClassName: acs-abs
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+     storage: 5Gi
+     
+     
+     
