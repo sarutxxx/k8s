@@ -56,4 +56,3 @@ spec:
                 - name: dev-ora-ords
                   mountPath: "/u02/ords/conf"
                   
-
