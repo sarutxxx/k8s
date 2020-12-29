@@ -38,10 +38,10 @@ spec:
             imagePullPolicy: IfNotPresent
             resources:
                 requests:
-                  memory: "2Gi"
+                  memory: "1Gi"
                   cpu: "2"
                 limits:
-                  memory: "2Gi"
+                  memory: "1Gi"
                   cpu: "2"
             ports:
                 - name: ords
