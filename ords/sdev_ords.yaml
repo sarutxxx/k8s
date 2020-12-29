@@ -52,7 +52,7 @@ spec:
                 - name: dshm
                   mountPath: "/dev/shm"
                 - name: dev2-ora-tomcat
-                  mountPath: "/opt2/tomcat"
+                  mountPath: "/opt/tomcat"
                 - name: dev2-ora-ords
-                  mountPath: "/u02/ords/conf"
+                  mountPath: "/u01/ords/conf"
                   
