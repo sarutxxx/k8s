@@ -27,10 +27,10 @@ spec:
              medium: Memory  
          - name: dev2-ora-tomcat
            persistentVolumeClaim:
-             claimName: dev-ora-tomcat
+             claimName: dev2-ora-tomcat
          - name: dev2-ora-ords
            persistentVolumeClaim:
-             claimName: dev-ora-ords
+             claimName: dev2-ora-ords
              
       containers:
           - name: dev2-ords-con
