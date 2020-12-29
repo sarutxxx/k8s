@@ -1,24 +1,24 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: dev-ords 
+  name: dev2-ords 
   namespace: dwh-prd-consent
   labels:
-    app: dev_ords
-    version: "1.5"
+    app: dev2_ords
+    version: "1.7"
 spec:
   selector:
-    app: dev_ords
-    version: "1.5"
+    app: dev2_ords
+    version: "1.7"
   type: NodePort
   ports:
   - name: ords
     protocol: TCP
     port: 8080
     targetPort: 8080
-    nodePort: 32558
+    nodePort: 32556
   - name: ordshttps
     protocol: TCP
     port: 8443
     targetPort: 8443
-    nodePort: 32559
+    nodePort: 32557
