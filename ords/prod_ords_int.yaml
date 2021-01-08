@@ -54,5 +54,5 @@ spec:
                 - name: ora-tomcat
                   mountPath: "/opt2/tomcat"
                 - name: ora-ords
-                  mountPath: "/u02/ords/conf"
+                  mountPath: "/u02/ords"
                   
