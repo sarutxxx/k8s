@@ -5,11 +5,11 @@ metadata:
   namespace: dwh-prd-consent
   labels:
     app: dev_ords
-    version: "1.5"
+    version: "1.8"
 spec:
   selector:
     app: dev_ords
-    version: "1.5"
+    version: "1.8"
   type: NodePort
   ports:
   - name: ords
