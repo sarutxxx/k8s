@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  namespace: dwh-prd-consent
+  name: prod-ords
+  labels:
+    app: prod_ords
+  annotations:
+    kubernetes.io/ingress.allow-http: "false"
+spec:
+  rules:
+    - host: prod-ords.dwh-prd-consent.atlantic.true.th
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: prod-ords
+              servicePort: 8080
